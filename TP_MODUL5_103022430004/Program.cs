@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace TP_MODUL5_103022430004
 {
@@ -29,7 +29,6 @@ namespace TP_MODUL5_103022430004
     {
         static void Main(string[] args)
         {
-
             HaloGeneric halo = new HaloGeneric();
             Console.Write("Masukkan nama panggilan Anda: ");
             string namaPanggilan = Console.ReadLine();
