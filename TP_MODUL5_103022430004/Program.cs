@@ -1,18 +1,49 @@
-﻿public class HaloGeneric
+﻿using System;
+
+namespace TP_MODUL5_103022430004
 {
-    public void SapaUser<T>(T user)
+    public class HaloGeneric
     {
-        Console.WriteLine($"Halo user {user}");
+        public void SapaUser<T>(T user)
+        {
+            Console.WriteLine($"Halo user {user}");
+        }
     }
-}
-class main
-{
-    static void Main(string[] args)
+
+    public class DataGeneric<T>
     {
-        HaloGeneric halo = new HaloGeneric();
-        Console.Write("Masukkan nama panggilan Anda: ");
-        string namaPanggilan = Console.ReadLine();
-        halo.SapaUser(namaPanggilan);
-        Console.ReadLine();
+        private T data;
+
+        public DataGeneric(T data)
+        {
+            this.data = data;
+        }
+
+        public void PrintData()
+        {
+            Console.WriteLine("Data yang tersimpan adalah: " + data);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            HaloGeneric halo = new HaloGeneric();
+            Console.Write("Masukkan nama panggilan Anda: ");
+            string namaPanggilan = Console.ReadLine();
+            halo.SapaUser(namaPanggilan);
+
+            Console.WriteLine();
+
+            Console.Write("Masukkan NIM: ");
+            string nim = Console.ReadLine();
+            DataGeneric<string> data = new DataGeneric<string>(nim);
+            data.PrintData();
+
+            Console.WriteLine("\nTekan Enter untuk keluar...");
+            Console.ReadLine();
+        }
     }
 }
